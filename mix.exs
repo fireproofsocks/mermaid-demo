@@ -28,7 +28,8 @@ defmodule Foo.MixProject do
           _ ->
             ""
         end
-      ]
+      ],
+      releases: releases()
     ]
   end
 
@@ -47,6 +48,17 @@ defmodule Foo.MixProject do
       {:dialyxir, "~> 1.1", only: [:dev], runtime: false},
       {:phoenix_pubsub, "~> 2.0"},
       {:ex_doc, "~> 0.24.2", only: [:dev], runtime: false}
+    ]
+  end
+
+  defp releases do
+    [
+      foo: [
+        include_executables_for: [:unix],
+        steps: [:assemble, :tar],
+        overlays: ["envs/"],
+        path: "_build/rel"
+      ]
     ]
   end
 end

@@ -27,4 +27,4 @@ foo-*.tar
 /tmp
 
 # .env files (used by dotenvy to load config from the environment)
-*.env
+*.local.env
