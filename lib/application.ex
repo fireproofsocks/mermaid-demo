@@ -21,7 +21,7 @@ defmodule Foo.Application do
   def start(_type, _args) do
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Digestex.Supervisor]
+    opts = [strategy: :one_for_one, name: Foo.Supervisor]
 
     Supervisor.start_link(
       [{Phoenix.PubSub, name: :pubsub}] ++ component_specs(@components, :default),

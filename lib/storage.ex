@@ -43,11 +43,6 @@ defmodule Foo.Storage do
     {:ok, state}
   end
 
-  @doc """
-  The third argument to `Phoenix.PubSub.broadcast/3` must be a tuple that corresponds
-  to `Digestex.Stages.SubProducer.handle_info/2`: we use the `:message` atom to identify the tuple
-  as the carrier of the message (a.k.a. event).
-  """
   @impl true
   def handle_info(
         {:message, msg},
